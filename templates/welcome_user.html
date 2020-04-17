@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+  <body>
+    <br>
+    <br>
+    <h2 align="center"> Welcome, You are logged In </h2>
+    <br>
+    <br>
+    
+    {% if current_user.is_authenticated %}
+    <a href="{{url_for('logout')}}">LogOut</a><br>
+    <a href="{{ url_for('safety_questionnaire_query')}}">See All Query Data</a><br>
+    <a href="{{ url_for('delete_questionnaire')}}"> Delete All the data in the table</a><br>
+    <a href="{{url_for('register')}}"> Register a new user</a>
+    {% else %}
+    <p>Please LogIn</p>
+    <a href="{{ url_for('register')}}"> LogIn</a>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <br>
+  </body>
+{% endblock content %}

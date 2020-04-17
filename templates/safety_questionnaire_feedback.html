@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+  <body>
+    {% if session['kid_name']  %}
+    <h3> Thank You {{ session['kid_name'] }}, here is the information you have given us</h3>
+    <ul>
+        <li>{{ session['kid_name'] }}</li>
+        <li>{{ session['difficulty_bed'] }}</li>
+        <li>{{ session['adequate_sunlight'] }}</li>
+        <li>{{ session['floor_hazard'] }}</li>
+        <li>{{ session['towel_rails'] }}</li>
+        <li>{{ session['unsteady_standing'] }}</li>
+        <li>{{ session['water_presence'] }}</li>
+        <li>{{ session['bench_height'] }}</li>
+        <li>{{ session['kitchen_reach'] }}</li>
+        <li>{{ session['slip_products'] }}</li>
+        <li>{{ session['electrical_cords'] }}</li>
+        <li>{{ session['stairs_edge'] }}</li>
+        <li>{{ session['stairs_handrails'] }}</li>
+        <li>{{ session['path_checked'] }}</li>
+    </ul>
+  {% else %}
+  <h2> please fill the questionnaire first</h2>
+  <a href="{{ url_for('safety_questionnaire') }}">Go to questionnaire page</a>
+  {% endif %}
+  </body>
+{% endblock content %}

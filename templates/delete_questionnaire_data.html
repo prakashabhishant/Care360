@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <title>Delete Data</title>
+  </head>
+  <body>
+  <h1>Delete Data</h1>
+    <h2> Delete all the data in the table</h2>
+    <form  method="post">
+      {{ form.hidden_tag() }}
+      {{form.submit() }}
+    </form>
+  </body>
+{% endblock content %}

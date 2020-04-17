@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="post">
+      {{ form.hidden_tag() }}
+      {{ form.council_name.label}}{{form.council_name}}
+      <br>
+      {{ form.submit()}}
+
+    </form>
+  </body>
+</html>

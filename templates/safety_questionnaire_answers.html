@@ -1,0 +1,58 @@
+
+
+
+{% extends "layout.html" %}
+{% block content %}
+  <body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 align="center"> Here is the data in the database table</h1>
+    <table class="table">
+      <tr>
+        <th scope="col"> Kid name</th>
+        <th scope="col"> Difficult with bed</th>
+        <th scope="col"> Adequate Sunlight</th>
+        <th scope="col"> Floor Hazard </th>
+        <th scope="col"> Towel rails</th>
+        <th scope="col"> Unsteady Standing</th>
+        <th scope="col"> Water presence at floor</th>
+        <th scope="col"> Bench height inadequate</th>
+        <th scope="col"> Kitchen items within reach</th>
+        <th scope="col"> Slippery products at home</th>
+        <th scope="col"> Electrical cords on the floor </th>
+        <th scope="col"> Stairs are edgy</th>
+        <th scope="col"> Stairs handrails</th>
+        <th scope="col"> Path is checked?</th>
+      </tr>
+
+        {% for data in questionnaire %}
+        <tr>
+        <td> {{ data.kid_name}} </td>
+        <td> {{ data.difficulty_bed }}</td>
+        <td> {{ data.adequate_sunlight }}</td>
+        <td> {{ data.floor_hazard }}</td>
+        <td> {{ data.towel_rails }}</td>
+        <td> {{ data.unsteady_standing }}</td>
+        <td> {{ data.water_presence }}</td>
+        <td> {{ data.bench_height }}</td>
+        <td> {{ data.kitchen_reach }}</td>
+        <td> {{ data.slip_products }}</td>
+        <td> {{ data.electrical_cords }}</td>
+        <td> {{ data.stairs_edge }}</td>
+        <td> {{ data.stairs_handrails }}</td>
+        <td> {{ data.path_checked }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+    <br><br><br><br><br><br>
+    <!-- <ul>
+      {% for kid_name in questionnaire %}
+      <li> {{ kid_name }} </li>
+      {% endfor %}
+    </ul> -->
+  </body>
+{% endblock content %}

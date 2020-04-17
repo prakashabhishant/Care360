@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <table class="table">
+      <tr>
+        <th scope="col"> Council</th>
+        <th scope="col"> State</th>
+        <th scope="col"> Natural calamity 1</th>
+        <th scope="col"> Natural calamity 2</th>
+        <th scope="col"> Natural calamity 3</th>
+        <th scope="col"> Natural calamity 4</th>
+      </tr>
+
+        {% for data in councildata %}
+        <tr>
+        <td> {{ data.council}} </td>
+        <td> {{ data.state }}</td>
+        <td> {{ data.calamity_1 }}</td>
+        <td> {{ data.calamity_2 }}</td>
+        <td> {{ data.calamity_3 }}</td>
+        <td> {{ data.calamity_4 }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+  </body>
+</html>

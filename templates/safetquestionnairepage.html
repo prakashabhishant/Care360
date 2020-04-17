@@ -1,0 +1,49 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<div class=container>
+<img src="static/img/at_home.jpg" class="d-block w-100" class="img-fluid" alt="...">
+</div>
+    <h3> Please fill out the questionnaire</h3>
+    <form method="post" >
+	<div class="form-group" style="font-size:12">
+    {{ form.hidden_tag() }}
+
+    {{ form.kid_name.label}}
+	
+	<br>
+    {{form.kid_name(class="form-control col-lg-2 ")}}
+
+    <br>
+    <br>
+    {{ form.difficulty_bed.label}}{{form.difficulty_bed}}
+    <br>
+    {{ form.adequate_sunlight.label}}{{form.adequate_sunlight}}
+    <br>
+    {{ form.floor_hazard.label}}{{form.floor_hazard}}
+    <br>
+    {{ form.towel_rails.label}}{{form.towel_rails}}
+    <br>
+    {{ form.unsteady_standing.label}}{{form.unsteady_standing}}
+    <br>
+    {{ form.water_presence.label}}{{form.water_presence}}
+    <br>
+    {{ form.bench_height.label}}{{form.bench_height}}
+    <br>
+    {{ form.kitchen_reach.label}}{{form.kitchen_reach}}
+    <br>
+    {{ form.slip_products.label}}{{form.slip_products}}
+    <br>
+    {{ form.electrical_cords.label}}{{form.electrical_cords}}
+    <br>
+    {{ form.stairs_edge.label}}{{form.stairs_edge}}
+    <br>
+    {{ form.stairs_handrails.label}}{{form.stairs_handrails}}
+    <br>
+    {{ form.path_checked.label}}{{form.path_checked}}
+    <br>
+    {{ form.submit()}}
+</div>
+    </form>
+{% endblock content %}

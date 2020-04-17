@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if session['council']  %}
+    <h3>here is the information you have given us</h3>
+    <ul>
+        <li>{{ session['council'] }}</li>
+        <li>{{ session['state'] }}</li>
+        <li>{{ session['calamity_1'] }}</li>
+        <li>{{ session['calamity_2'] }}</li>
+        <li>{{ session['calamity_3'] }}</li>
+        <li>{{ session['calamity_4'] }}</li>
+    </ul>
+  {% else %}
+  <h2> please fill the Council first</h2>
+  <a href="{{ url_for('safetybycouncil') }}">Go to safety by council page</a>
+  {% endif %}
+  </body>
+</html>
