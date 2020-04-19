@@ -17,7 +17,7 @@ class SafetyQuestionnaireForm(FlaskForm):
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
     adequate_sunlight = SelectField('Where do you think the house where your grandparents lived have adequate sunlight getting through?',
-                        choices=[('Stairs','Stairs'),('Bathroom','Bathroom'),('Kitchen','Bedroom'),('Others','Others')], validators=[DataRequired()])
+                        choices=[('Stairs','Stairs'),('Bathroom','Bathroom'),('Kitchen','Bedroom')], validators=[DataRequired()])
 
     floor_hazard = RadioField('Do you think there always have some hazards on the floor at home?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])

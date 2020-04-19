@@ -46,29 +46,32 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="home">Home</a></li>
+                        <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
                         <li class="dropdown"><a href="#">Home Safety<i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="#">Home Safety Questionnaire</a></li>
+                                <li><a href="{{ url_for('safety_questionnaire')}}">Home Safety Questionnaire</a></li>
                                 <li><a href="#">General Safety Guidelines</a></li>
-                                <li><a href="#">Products For Safety</a></li>
+                                <li><a href="{{ url_for('safetybycouncil')}}"> Natural Disaster Assist</a></li>
+                                <li><a href="#"> COVID-19 Injuries Assist</a></li>
+
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="#">Healthy Diet<i class="fa fa-angle-down"></i></a>
+                        <!-- <li class="dropdown"><a href="#">Healthy Diet<i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 <li><a href="#">1</a></li>
                                 <li><a href="#">2</a></li>
                                 <li><a href="#">3</a></li>
                             </ul>
-                        </li>
-                        <li class="dropdown"><a href="#">Physical Activity<i class="fa fa-angle-down"></i></a>
+                        </li> -->
+                        <!-- <li class="dropdown"><a href="#">Physical Activity<i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 <li><a href="#">1t</a></li>
                                 <li><a href="#">2</a></li>
                                 <li><a href="#">3</a></li>
                             </ul>
-                        </li>
-                        <li><a href="#">Admin Login</a></li>
+                        </li> -->
+                        <li><a href="{{ url_for('login') }}">Admin Login</a></li>
+                        <li><a href="#">Credits</a></li>
                     </ul>
                 </div>
 
@@ -82,9 +85,9 @@
             <div class="row">
                 <div class="main-slider">
                     <div class="slide-text">
-                        <h1>Be a Superhero For Your Grandparent</h1>
+                        <h1>Be a Superhero For Your Grandparents</h1>
                         <p>
-                            Prevent injuries of your grandparent by general assessments and recommendations provided in our website.
+                          God couldn't be everywhere and so he made Grandparents. Take extra care of your angels so they enjoy a healthy, active and risk free life with you.
                         </p>
 
                     </div>
@@ -108,7 +111,8 @@
                             <img src="static/images/home/safe_home.jpg" alt="">
                         </div>
                         <h2>Home Safety</h2>
-                        <p>The home where older people live must be safe for them.So that they don't get injured inside their home during movement.</p>
+                        <p>Did you know that with your little help and active assesment of your grandparents house can help them live a healthy and risk free life. So bring your magnifying glasses on
+                        and awake the inner James Bond in you.</p>
                     </div>
                 </div>
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
@@ -116,8 +120,9 @@
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
                             <img src="static/images/home/diet.jpg" alt="">
                         </div>
-                        <h2>Healthy Diet</h2>
-                        <p>Eldrly should be provided with healty foods like foods that are high in calcium.All the information are provied in healthy diet section along with assessments.</p>
+                        <h2>Diet recommendations</h2>
+                        <p>A healthy outside always starts from the inside. Bring awareness about healthy diet in your grandparents life with the diet recomendations based on your grandparents age
+                        and bring a healthy smile on their face.</p>
                     </div>
                 </div>
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
@@ -126,7 +131,8 @@
                             <img src="static/images/home/Artboard2.png" alt="">
                         </div>
                         <h2>Physical Activity</h2>
-                        <p>Active aging is one of the most popular concepts now a days.Older person must engage in some physical exercise according to their age.</p>
+                        <p>Aging is not lost youth but a new stage of oppurtunity and stresngth. Help your grandparents in their day to day life exercise routine and make them aware about the essence of
+                        physical activities and healthy living.</p>
                     </div>
                 </div>
             </div>
@@ -145,7 +151,7 @@
                         </div>
                         <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                             <div class="tour-button">
-                                <a href="#" class="btn btn-common">TAKE THE TOUR</a>
+                                <a href="{{ url_for('safety_questionnaire')}}" class="btn btn-common">HOUSE SAFETY ASSESMENT</a>
                              </div>
                         </div>
                     </div>
@@ -161,17 +167,19 @@
             <div class="row">
                 <div class="single-features">
                     <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <a href="#"><img src="static/images/home/hsa.jpg" class="img-responsive" alt=""></a>
+                        <a href="{{ url_for('safety_questionnaire')}}"><img src="static/images/home/hsa.jpg" class="img-responsive" alt=""></a>
                     </div>
                     <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                         <h2>Safety Assessments</h2>
-                        <P>Check how safe is your home for older grandparent.</P>
+                        <P>Does your grandparents hurt themselves unintentionally at their home? Know what you can do to help them avoid injuries at home
+                        by taking a general house safety assesment.</P>
                     </div>
                 </div>
                 <div class="single-features">
                     <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                         <h2>Diet Assessments</h2>
-                        <P>Check your grandparent's food habit through assessment and suggest them healthy food.</P>
+                        <P>Check your grandparent's food habit through assessment and suggest them healthy food. This will provide them suffiecient nutrients and
+                        energy to live their life actively.</P>
                     </div>
                     <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                         <a href="#"><img src="static/images/home/food.png" class="img-responsive" alt=""></a>
@@ -183,7 +191,8 @@
                     </div>
                     <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                         <h2>Physical Activity</h2>
-                        <P>Check your grandparent's physically active period and suggest them about active aging.</P>
+                        <P>Check your grandparent's physically active period and suggest them about active aging. Use our physical activity recommedations and
+                        help your grandparents in their day to day life routine.</P>
                     </div>
                 </div>
             </div>
@@ -198,8 +207,8 @@
                     <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                         <p><img src="static/images/home/go.png" class="img-responsive" alt=""></p>
                         <h1 class="title">Happy & Healthy Olders</h1>
-                        <p>Our older community is vulnarable to injury.We provide some necessary assessments and general recommendations which will be done through their
-                            grandchildren.These things will be helpful for preventing injuries.
+                        <p> Remember love is the greatest gift one generation can give to another. During this unprecedented time of COVID-19, in case of minor injuries to your grandparents,
+                          you can use <a> hospital locations </a> services within Melbourne to avoid risky areas.
                         </p>
                     </div>
                     <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
@@ -239,10 +248,11 @@
 
                 <div class="col-sm-12">
                     <div class="copyright-text text-center">
-                        <p>&copy; Care360. All Rights Reserved.</p>
+                        <p>Care360</p>
                         <p>
                             Disclaimer: We provide recommendations on the basis of Australian Government Home Safety,Diet and Physical Activity Guidelines for Older people.
                         </p>
+                        <p> Credits : WebUi Theme by Themeum</p>
                     </div>
                 </div>
             </div>

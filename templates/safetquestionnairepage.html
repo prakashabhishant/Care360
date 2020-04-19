@@ -1,49 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | Care 360</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/lightbox.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 
-{% extends "layout.html" %}
-{% block content %}
+    <!-- [if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif] -->
+    <link rel="shortcut icon" href="static/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="static/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="static/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
 
-<div class=container>
-<img src="static/img/at_home.jpg" class="d-block w-100" class="img-fluid" alt="...">
-</div>
-    <h3> Please fill out the questionnaire</h3>
-    <form method="post" >
-	<div class="form-group" style="font-size:12">
-    {{ form.hidden_tag() }}
+<body>
+	<header id="header">
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ url_for('index') }}">
+                    	<h1><img src="static/images/logo-care360.png" alt="logo" class="img-fluid"height="75px"
+                            width="75px"> Care 360</h1>
+                    </a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-    {{ form.kid_name.label}}
-	
-	<br>
-    {{form.kid_name(class="form-control col-lg-2 ")}}
 
-    <br>
-    <br>
-    {{ form.difficulty_bed.label}}{{form.difficulty_bed}}
-    <br>
-    {{ form.adequate_sunlight.label}}{{form.adequate_sunlight}}
-    <br>
-    {{ form.floor_hazard.label}}{{form.floor_hazard}}
-    <br>
-    {{ form.towel_rails.label}}{{form.towel_rails}}
-    <br>
-    {{ form.unsteady_standing.label}}{{form.unsteady_standing}}
-    <br>
-    {{ form.water_presence.label}}{{form.water_presence}}
-    <br>
-    {{ form.bench_height.label}}{{form.bench_height}}
-    <br>
-    {{ form.kitchen_reach.label}}{{form.kitchen_reach}}
-    <br>
-    {{ form.slip_products.label}}{{form.slip_products}}
-    <br>
-    {{ form.electrical_cords.label}}{{form.electrical_cords}}
-    <br>
-    {{ form.stairs_edge.label}}{{form.stairs_edge}}
-    <br>
-    {{ form.stairs_handrails.label}}{{form.stairs_handrails}}
-    <br>
-    {{ form.path_checked.label}}{{form.path_checked}}
-    <br>
-    {{ form.submit()}}
-</div>
-    </form>
-{% endblock content %}
+
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+                        <li class="dropdown"><a href="#">Home Safety<i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="{{ url_for('safety_questionnaire')}}">Home Safety Questionnaire</a></li>
+                                <li><a href="#">General Safety Guidelines</a></li>
+                                <li><a href="{{ url_for('safetybycouncil')}}"> Natural Disaster Assist</a></li>
+                                <li><a href="#"> COVID-19 Injuries Assist</a></li>
+
+                            </ul>
+                        </li>
+                        <!-- <li class="dropdown"><a href="#">Healthy Diet<i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li class="dropdown"><a href="#">Physical Activity<i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="#">1t</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                            </ul>
+                        </li> -->
+                        <li><a href="{{ url_for('login') }}">Admin Login</a></li>
+                        <li><a href="#">Credits</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <section id="home-slider">
+        <div class="container">
+            <div class="row">
+                <div class="main-slider">
+                    <div class="slide-text">
+                        <h1>Time to be a James Bond</h1>
+                        <p>
+                          Assess the house environment of your grandparents and change their living environment for effective life style.
+                        </p>
+
+                    </div>
+                    <img src="static/images/Photos/kids/Artboard 7.png" class="slider-hill" alt="slider image" height="350px" width="350px">
+                    <img src="static/images/home/slider/birds1.png" class="slider-birds1" alt="slider image">
+                   <!-- <img src="static/images/home/slider/birds2.png" class="slider-birds2" alt="slider image"> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+    </section>
+    <!--/#home-slider-->
+<br>
+<br>
+    <section id="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h1 class="title">House Safety Assesment</h1>
+                        <p> Before Completing this questionnaire assesment, please look into your grandparents house and way of living.
+                        </p>
+                          <p><img src="static/images/detective.jpg" class="img-responsive" alt="detective image"  width="20%"></p>
+                    </div>
+                    <h2 class="title" align="center"> Please fill out the questionnaire below</h2>
+                    <br><br><br>
+        <form method="post" class="form-group">
+        <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+        {{ form.hidden_tag() }}
+        {{ form.kid_name.label}}
+
+        <br>
+        <div class="row">
+
+
+
+        {{form.kid_name(class = "", placeholder="Enter Your Name ")}}
+        </div>
+        <br>
+        <br>
+        <br>
+          <p><img src="static/images/Photos/kids/Artboard 16.png" class="img-responsive" alt="detective image"  width="20%"></p>
+
+        <br>
+        <br>
+        {{ form.difficulty_bed.label}}{{form.difficulty_bed}}
+        <br>
+        {{ form.adequate_sunlight.label}}
+        <br>{{form.adequate_sunlight()}}
+        <br><br>
+        {{ form.floor_hazard.label}}{{form.floor_hazard}}
+        <br>
+        {{ form.towel_rails.label}}
+        <br>{{form.towel_rails}}
+        <br>
+        <br>
+        {{ form.unsteady_standing.label}}{{form.unsteady_standing}}
+        <br>
+        {{ form.water_presence.label}}
+        <br>{{form.water_presence}}
+        <br>
+        <br>
+        {{ form.bench_height.label}}
+        <br>{{form.bench_height}}
+        <br><br>
+        {{ form.kitchen_reach.label}}{{form.kitchen_reach}}
+        <br>
+        {{ form.slip_products.label}}
+        <br>{{form.slip_products}}
+        <br>
+        <br>
+        {{ form.electrical_cords.label}}{{form.electrical_cords}}
+        <br>
+        {{ form.stairs_edge.label}}{{form.stairs_edge}}
+        <br>
+        {{ form.stairs_handrails.label}}{{form.stairs_handrails}}
+        <br>
+        {{ form.path_checked.label}}{{form.path_checked}}
+        <br>
+        {{ form.submit(class= "btn btn-success")}}
+    </div>
+        </form>
+                </div>
+            </div>
+        </div>
+     </section>
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                    <img src="static/images/home/under.png" class="img-responsive inline" alt="">
+                </div>
+
+
+
+                <div class="col-sm-12">
+                    <div class="copyright-text text-center">
+                        <p>Care360</p>
+                        <p>
+                            Disclaimer: We provide recommendations on the basis of Australian Government Home Safety,Diet and Physical Activity Guidelines for Older people.
+                        </p>
+                        <p> Credits : WebUi Theme by Themeum</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="static/js/wow.min.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+</body>
+</html>
